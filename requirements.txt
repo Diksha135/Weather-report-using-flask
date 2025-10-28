@@ -1,0 +1,6 @@
+Flask
+requests
+python-dotenv
+Flask-Caching
+Flask-Limiter
+pytest

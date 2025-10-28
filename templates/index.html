@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌤 Weather Forecast</h1>
+
+        <form id="weatherForm">
+            <input type="text" id="city" placeholder="Enter city name" required>
+            <button type="submit">Get Weather</button>
+        </form>
+
+        <div id="currentWeather"></div>
+
+        <button id="forecastBtn" class="forecast-button" style="display:none;">Show Next 3-Hour Forecast</button>
+
+        <div id="forecast" class="forecast-grid"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('weatherForm');
+        const forecastBtn = document.getElementById('forecastBtn');
+        const currentDiv = document.getElementById('currentWeather');
+        const forecastDiv = document.getElementById('forecast');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const city = document.getElementById('city').value;
+
+            const res = await fetch(`/api/weather?city=${city}`);
+            const data = await res.json();
+
+            if (data.error) {
+                currentDiv.innerHTML = `<p class="error">❌ ${data.error}</p>`;
+                forecastBtn.style.display = 'none';
+                forecastDiv.innerHTML = '';
+            } else {
+                currentDiv.innerHTML = `
+                    <h2>${data.city}, ${data.country}</h2>
+                    <p><strong>🌡 Temperature:</strong> ${data.temperature}</p>
+                    <p><strong>🤗 Feels Like:</strong> ${data.feels_like}</p>
+                    <p><strong>🌥 Description:</strong> ${data.description}</p>
+                    <p><strong>💧 Humidity:</strong> ${data.humidity}</p>
+                    <p><strong>🌬 Wind:</strong> ${data.wind_speed}</p>
+                `;
+                forecastBtn.style.display = 'inline-block';
+                forecastBtn.onclick = () => getForecast(city);
+            }
+        });
+
+        async function getForecast(city) {
+            const res = await fetch(`/api/forecast?city=${city}`);
+            const data = await res.json();
+
+            if (data.error) {
+                forecastDiv.innerHTML = `<p class="error">❌ ${data.error}</p>`;
+                return;
+            }
+
+            let html = '';
+            data.forecast.forEach(f => {
+                html += `
+                    <div class="forecast-card">
+                        <p><strong>${f.datetime}</strong></p>
+                        <p>🌡 ${f.temp}</p>
+                        <p>${f.description}</p>
+                    </div>
+                `;
+            });
+
+            forecastDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
