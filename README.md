@@ -9,7 +9,6 @@
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white" alt="Python"></a>
   <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-2.x-black.svg?logo=flask" alt="Flask"></a>
   <a href="https://openweathermap.org/api"><img src="https://img.shields.io/badge/OpenWeatherMap-API-orange.svg?logo=openweathermap" alt="OpenWeatherMap"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"></a>
   <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/Code%20Style-Black-000.svg" alt="Black code style"></a>
 </p>
 
