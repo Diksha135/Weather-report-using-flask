@@ -1,28 +1,46 @@
-# 🌦️ Weather Forecast API (Flask + OpenWeatherMap)
+# 🌦️ Weather Forecast API  
+### Real-time Weather Data with Flask + OpenWeatherMap
 
-A simple REST API built with Flask that fetches real-time weather data using the OpenWeatherMap API.  
-This project demonstrates how to build and structure a clean, modular Flask application with environment variables, caching, and rate limiting.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e62ef259-b3ab-4222-a218-3f7aafcd69e5" width="60%" alt="Weather Forecast API Banner"/>
+</p>
+
+<p align="center">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-2.x-black.svg?logo=flask" alt="Flask"></a>
+  <a href="https://openweathermap.org/api"><img src="https://img.shields.io/badge/OpenWeatherMap-API-orange.svg?logo=openweathermap" alt="OpenWeatherMap"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="MIT License"></a>
+  <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/Code%20Style-Black-000.svg" alt="Black code style"></a>
+</p>
 
 ---
-<img width="932" height="1033" alt="image" src="https://github.com/user-attachments/assets/e62ef259-b3ab-4222-a218-3f7aafcd69e5" />
 
-<img width="914" height="1034" alt="image" src="https://github.com/user-attachments/assets/845901f4-312d-4377-9632-3cecb3455366" />
+A lightweight and modular **REST API** built using **Flask**, designed to fetch and serve **real-time weather data** from the **OpenWeatherMap API**.  
+This project demonstrates best practices for API design — including **environment variables**, **caching**, and **rate limiting** — all wrapped in a **clean, extensible architecture**.
 
+---
+
+## 🖼️ Preview
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/845901f4-312d-4377-9632-3cecb3455366" width="45%" alt="Weather API Screenshot 1" />
+  &nbsp;
+  <img src="https://github.com/user-attachments/assets/e62ef259-b3ab-4222-a218-3f7aafcd69e5" width="45%" alt="Weather API Screenshot 2" />
+</p>
+
+---
 
 ## 🚀 Features
 
-✅ Get **current weather** for any city  
+✅ Fetch **current weather** for any city  
 ✅ Uses **OpenWeatherMap API** for real-time data  
-✅ Includes **caching** for performance  
-✅ Has **rate-limiting** to prevent API abuse  
-✅ Clean, modular structure (Blueprints, Services, Configs)  
-✅ Easy to extend and deploy
+✅ Includes **caching** for faster responses  
+✅ **Rate limiting** to prevent abuse  
+✅ **Environment variable support** for security  
+✅ **Blueprint-based modular structure**  
+✅ Ready for **Dockerization and deployment**
 
 ---
 
-## ⚙️ Project Setup Instructions
+## 🏗️ Project Structure
 
-### 🧩 1. Clone the Repository
-```bash
-git clone https://github.com/Diksha135/Weather-report-using-flask.git
-cd Weather-report-using-flask
