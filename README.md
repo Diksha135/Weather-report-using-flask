@@ -4,6 +4,10 @@ A simple REST API built with Flask that fetches real-time weather data using the
 This project demonstrates how to build and structure a clean, modular Flask application with environment variables, caching, and rate limiting.
 
 ---
+<img width="932" height="1033" alt="image" src="https://github.com/user-attachments/assets/e62ef259-b3ab-4222-a218-3f7aafcd69e5" />
+
+<img width="914" height="1034" alt="image" src="https://github.com/user-attachments/assets/845901f4-312d-4377-9632-3cecb3455366" />
+
 
 ## 🚀 Features
 
