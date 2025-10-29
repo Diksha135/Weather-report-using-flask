@@ -41,5 +41,4 @@ This project demonstrates best practices for API design — including **environm
 
 ---
 
-## 🏗️ Project Structure
 
