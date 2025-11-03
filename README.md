@@ -9,18 +9,21 @@ A clean and responsive Weather Forecast web application. It provides current wea
 Here's a look at the application's user interface.
 
 **Search Page:** The user can search for any city by name.
-(image_dc2b25.jpg)
+<img width="1895" height="1030" alt="image" src="https://github.com/user-attachments/assets/b776bd65-cf2b-438b-87d6-b677c41aeae0" />
+
 
 **Current Weather:** Displays the main weather card with temperature, humidity, and wind speed.
-(image_dc2b68.jpg)
+<img width="1877" height="1032" alt="image" src="https://github.com/user-attachments/assets/b0397895-8e46-49fb-a0e1-f18e6d45d152" />
+
 
 **Forecast:** Shows the upcoming forecast for the selected location.
-(image_dc2ba9.jpg)
+<img width="1884" height="1031" alt="image" src="https://github.com/user-attachments/assets/606a6e6c-d953-47a7-89fc-cde265a4c0cb" />
+
 
 ## ✨ Features
 
 * **Current Weather:** Get real-time weather data for any city (by name) or coordinates (latitude/longitude).
-* **5-Day Forecast:** Retrieve a 5-day forecast, provided in 3-hour intervals.
+* **Full Day Forecast:** Retrieve a Full day forecast, provided in 3-hour intervals.
 * **Backend Caching:** API responses are cached (default 600 seconds) to reduce calls to the OpenWeatherMap API and improve response speed.
 * **Rate Limiting:** The API is protected from abuse with a default rate limit of 60 requests per minute per IP.
 * **Clean RESTful API:** A simple API powers the frontend, making it easy to manage or extend.
