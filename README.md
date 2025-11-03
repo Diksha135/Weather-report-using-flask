@@ -1,44 +1,100 @@
-# 🌦️ Weather Forecast API  
-### Real-time Weather Data with Flask + OpenWeatherMap
+# 🌦️ Weather Forecast App
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/e62ef259-b3ab-4222-a218-3f7aafcd69e5" width="60%" alt="Weather Forecast API Banner"/>
-</p>
+A clean and responsive Weather Forecast web application. It provides current weather conditions and a 5-day/3-hour forecast using a Flask-powered backend API that fetches data from the OpenWeatherMap API.
 
-<p align="center">
-  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white" alt="Python"></a>
-  <a href="https://flask.palletsprojects.com/"><img src="https://img.shields.io/badge/Flask-2.x-black.svg?logo=flask" alt="Flask"></a>
-  <a href="https://openweathermap.org/api"><img src="https://img.shields.io/badge/OpenWeatherMap-API-orange.svg?logo=openweathermap" alt="OpenWeatherMap"></a>
-  <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/Code%20Style-Black-000.svg" alt="Black code style"></a>
-</p>
+[cite_start]The application backend is built with performance and security in mind, featuring response caching (via `Flask-Caching`)  [cite_start]and API rate-limiting (via `Flask-Limiter`).
 
----
+## 📸 Screenshots
 
-A lightweight and modular **REST API** built using **Flask**, designed to fetch and serve **real-time weather data** from the **OpenWeatherMap API**.  
-This project demonstrates best practices for API design — including **environment variables**, **caching**, and **rate limiting** — all wrapped in a **clean, extensible architecture**.
+Here's a look at the application's user interface.
 
----
+**Search Page:** The user can search for any city by name.
+(image_dc2b25.jpg)
 
-## 🖼️ Preview
+**Current Weather:** Displays the main weather card with temperature, humidity, and wind speed.
+(image_dc2b68.jpg)
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/845901f4-312d-4377-9632-3cecb3455366" width="45%" alt="Weather API Screenshot 1" />
-  &nbsp;
-  <img src="https://github.com/user-attachments/assets/e62ef259-b3ab-4222-a218-3f7aafcd69e5" width="45%" alt="Weather API Screenshot 2" />
-</p>
+**Forecast:** Shows the upcoming forecast for the selected location.
+(image_dc2ba9.jpg)
 
----
+## ✨ Features
 
-## 🚀 Features
+* **Current Weather:** Get real-time weather data for any city (by name) or coordinates (latitude/longitude).
+* **5-Day Forecast:** Retrieve a 5-day forecast, provided in 3-hour intervals.
+* **Backend Caching:** API responses are cached (default 600 seconds) to reduce calls to the OpenWeatherMap API and improve response speed.
+* **Rate Limiting:** The API is protected from abuse with a default rate limit of 60 requests per minute per IP.
+* **Clean RESTful API:** A simple API powers the frontend, making it easy to manage or extend.
 
-✅ Fetch **current weather** for any city  
-✅ Uses **OpenWeatherMap API** for real-time data  
-✅ Includes **caching** for faster responses  
-✅ **Rate limiting** to prevent abuse  
-✅ **Environment variable support** for security  
-✅ **Blueprint-based modular structure**  
-✅ Ready for **Dockerization and deployment**
+## 🛠️ Tech Stack
 
----
+* [cite_start]**Backend:** Flask 
+* [cite_start]**API Client:** `requests` 
+* [cite_start]**Caching:** `Flask-Caching` 
+* [cite_start]**Rate Limiting:** `Flask-Limiter` 
+* [cite_start]**Configuration:** `python-dotenv` 
+* **Data Source:** [OpenWeatherMap API](https://openweathermap.org/api)
+* [cite_start]**Dependencies:** `pytest` (for testing) 
 
+## 🚀 Getting Started
 
+Follow these instructions to get the project up and running on your local machine.
+
+### 1. Prerequisites
+
+* [cite_start]Python 3.12+ 
+* `pip` (Python package installer)
+* An API key from [OpenWeatherMap](https://openweathermap.org/api)
+
+### 2. Installation & Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-username/weather-forecast-app.git](https://github.com/your-username/weather-forecast-app.git)
+    cd weather-forecast-app
+    ```
+
+2.  **Create and activate a virtual environment:**
+    * **On macOS/Linux:**
+        ```bash
+        python3 -m venv venv
+        source venv/bin/activate
+        ```
+    * **On Windows:**
+        ```bash
+        python -m venv venv
+        .\venv\Scripts\activate
+        ```
+
+3.  **Install the required dependencies:**
+    The `requirements.txt` file contains all necessary packages.
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### 3. Configuration
+
+The application uses a `.env` file to manage environment variables. [cite_start]This file is ignored by Git[cite: 1].
+
+1.  Create a file named `.env` in the root of the project.
+2.  [cite_start]Add the following content to it, based on the provided example `.env` file[cite: 2].
+
+    ```ini
+    # Get your API key from [https://openweathermap.org/api](https://openweathermap.org/api)
+    OWM_API_KEY=YOUR_OPENWEATHERMAP_API_KEY_HERE
+    
+    # Set the Flask environment (development or production)
+    FLASK_ENV=development
+    FLASK_APP=app.py
+    
+    # Set the cache timeout in seconds
+    CACHE_TIMEOUT=600
+    ```
+
+3.  [cite_start]**Important:** Replace `YOUR_OPENWEATHERMAP_API_KEY_HERE` with your actual OpenWeatherMap API key[cite: 2].
+
+### 4. Running the Application
+
+With your virtual environment active and `.env` file configured, you can start the Flask server.
+
+```bash
+flask run
